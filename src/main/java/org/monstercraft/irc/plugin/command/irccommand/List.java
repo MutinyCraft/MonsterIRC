@@ -12,18 +12,18 @@ import org.monstercraft.irc.plugin.wrappers.IRCChannel;
 
 public class List extends IRCCommand {
 
-    @Override
-    public boolean canExecute(final String sender, final String message,
-            final IRCChannel channel) {
-        return MonsterIRC.getHandleManager().getIRCHandler().isConnected()
-                && message.toLowerCase().startsWith(
-                        Variables.commandPrefix + "list");
-    }
+	@Override
+	public boolean canExecute(final String sender, final String message,
+			final IRCChannel channel) {
+		return MonsterIRC.getHandleManager().getIRCHandler().isConnected()
+				&& message.toLowerCase().startsWith(
+						Variables.commandPrefix + "list");
+	}
 
-    @Override
-    public boolean execute(final String sender, final String message,
-            final IRCChannel channel) {
-    	final Player[] players = Bukkit.getServer().getOnlinePlayers();
+	@Override
+	public boolean execute(final String sender, final String message,
+			final IRCChannel channel) {
+		final Player[] players = Bukkit.getServer().getOnlinePlayers();
 		Vector<String> messages = new Vector<String>();
 		StringBuilder sb = new StringBuilder();
 		int last = players.length - 1;
@@ -58,5 +58,5 @@ public class List extends IRCCommand {
 			IRC.sendNotice(sender, sb.toString());
 		}
 		return true;
-    }
+	}
 }

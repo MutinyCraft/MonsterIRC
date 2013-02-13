@@ -22,198 +22,198 @@ import org.monstercraft.irc.plugin.util.ColorUtils;
  */
 public class IRCCommandSender implements ConsoleCommandSender {
 
-    private final String sender;
+	private final String sender;
 
-    /**
-     * Creates an instance of the IRCCommand sender.
-     * 
-     * @param plugin
-     *            The plugin.
-     * @param sender
-     *            The command sender's name.
-     */
-    public IRCCommandSender(final String sender) {
-        this.sender = sender;
-    }
+	/**
+	 * Creates an instance of the IRCCommand sender.
+	 * 
+	 * @param plugin
+	 *            The plugin.
+	 * @param sender
+	 *            The command sender's name.
+	 */
+	public IRCCommandSender(final String sender) {
+		this.sender = sender;
+	}
 
-    /**
-     * Sends a message.
-     */
+	/**
+	 * Sends a message.
+	 */
 
-    @Override
-    public void sendMessage(final String message) {
-        IRC.sendNotice(sender, ColorUtils.formatGametoIRC(message));
-    }
+	@Override
+	public void sendMessage(final String message) {
+		IRC.sendNotice(sender, ColorUtils.formatGametoIRC(message));
+	}
 
-    /**
-     * Fetches the name.
-     * 
-     * @return The name.
-     */
+	/**
+	 * Fetches the name.
+	 * 
+	 * @return The name.
+	 */
 
-    @Override
-    public String getName() {
-        return sender;
-    }
+	@Override
+	public String getName() {
+		return sender;
+	}
 
-    /**
-     * Fetches the server.
-     * 
-     * @return The server.
-     */
+	/**
+	 * Fetches the server.
+	 * 
+	 * @return The server.
+	 */
 
-    @Override
-    public Server getServer() {
-        return Bukkit.getServer();
-    }
+	@Override
+	public Server getServer() {
+		return Bukkit.getServer();
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public Set<PermissionAttachmentInfo> getEffectivePermissions() {
-        return null;
-    }
+	@Override
+	public Set<PermissionAttachmentInfo> getEffectivePermissions() {
+		return null;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public boolean hasPermission(final String arg0) {
-        return true;
-    }
+	@Override
+	public boolean hasPermission(final String arg0) {
+		return true;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public boolean hasPermission(final Permission arg0) {
-        return true;
-    }
+	@Override
+	public boolean hasPermission(final Permission arg0) {
+		return true;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public boolean isPermissionSet(final String arg0) {
-        return true;
-    }
+	@Override
+	public boolean isPermissionSet(final String arg0) {
+		return true;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public boolean isPermissionSet(final Permission arg0) {
-        return true;
-    }
+	@Override
+	public boolean isPermissionSet(final Permission arg0) {
+		return true;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public void recalculatePermissions() {
-    }
+	@Override
+	public void recalculatePermissions() {
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public void removeAttachment(final PermissionAttachment arg0) {
-    }
+	@Override
+	public void removeAttachment(final PermissionAttachment arg0) {
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public boolean isOp() {
-        return true;
-    }
+	@Override
+	public boolean isOp() {
+		return true;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public void setOp(final boolean op) {
-    }
+	@Override
+	public void setOp(final boolean op) {
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public PermissionAttachment addAttachment(final Plugin arg0) {
-        return null;
-    }
+	@Override
+	public PermissionAttachment addAttachment(final Plugin arg0) {
+		return null;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public PermissionAttachment addAttachment(final Plugin arg0, final int arg1) {
-        return null;
-    }
+	@Override
+	public PermissionAttachment addAttachment(final Plugin arg0, final int arg1) {
+		return null;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public PermissionAttachment addAttachment(final Plugin arg0,
-            final String arg1, final boolean arg2) {
-        return null;
-    }
+	@Override
+	public PermissionAttachment addAttachment(final Plugin arg0,
+			final String arg1, final boolean arg2) {
+		return null;
+	}
 
-    /**
-     * Ignored.
-     */
+	/**
+	 * Ignored.
+	 */
 
-    @Override
-    public PermissionAttachment addAttachment(final Plugin arg0,
-            final String arg1, final boolean arg2, final int arg3) {
-        return null;
-    }
+	@Override
+	public PermissionAttachment addAttachment(final Plugin arg0,
+			final String arg1, final boolean arg2, final int arg3) {
+		return null;
+	}
 
-    @Override
-    public void sendMessage(final String[] message) {
-    }
+	@Override
+	public void sendMessage(final String[] message) {
+	}
 
-    @Override
-    public void abandonConversation(final Conversation arg0) {
-    }
+	@Override
+	public void abandonConversation(final Conversation arg0) {
+	}
 
-    @Override
-    public void acceptConversationInput(final String arg0) {
+	@Override
+	public void acceptConversationInput(final String arg0) {
 
-    }
+	}
 
-    @Override
-    public boolean beginConversation(final Conversation arg0) {
-        return false;
-    }
+	@Override
+	public boolean beginConversation(final Conversation arg0) {
+		return false;
+	}
 
-    @Override
-    public boolean isConversing() {
-        return false;
-    }
+	@Override
+	public boolean isConversing() {
+		return false;
+	}
 
-    @Override
-    public void sendRawMessage(final String message) {
-        IRC.sendNotice(sender, ColorUtils.formatGametoIRC(message));
-    }
+	@Override
+	public void sendRawMessage(final String message) {
+		IRC.sendNotice(sender, ColorUtils.formatGametoIRC(message));
+	}
 
-    @Override
-    public void abandonConversation(final Conversation arg0,
-            final ConversationAbandonedEvent arg1) {
-    }
+	@Override
+	public void abandonConversation(final Conversation arg0,
+			final ConversationAbandonedEvent arg1) {
+	}
 
 }

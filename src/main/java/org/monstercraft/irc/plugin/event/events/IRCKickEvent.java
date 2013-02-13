@@ -6,47 +6,47 @@ import org.monstercraft.irc.plugin.wrappers.IRCChannel;
 
 public class IRCKickEvent extends IRCEvent {
 
-    public static final String CUSTOM_TYPE = "org.monstercraft.irc.event.events.IRCKickEvent";
+	public static final String CUSTOM_TYPE = "org.monstercraft.irc.event.events.IRCKickEvent";
 
-    private static final HandlerList handlers = new HandlerList();
+	private static final HandlerList handlers = new HandlerList();
 
-    private final IRCChannel channel;
+	private final IRCChannel channel;
 
-    private final String name;
+	private final String name;
 
-    private String kicker;
+	private String kicker;
 
-    private String reason;
+	private String reason;
 
-    public IRCKickEvent(final IRCChannel channel, final String kicker,
-            final String name, final String reason) {
-        this.name = name;
-        this.channel = channel;
-    }
+	public IRCKickEvent(final IRCChannel channel, final String kicker,
+			final String name, final String reason) {
+		this.name = name;
+		this.channel = channel;
+	}
 
-    public IRCChannel getIRCChannel() {
-        return channel;
-    }
+	public IRCChannel getIRCChannel() {
+		return channel;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getKicker() {
-        return kicker;
-    }
+	public String getKicker() {
+		return kicker;
+	}
 
-    public String getReason() {
-        return reason;
-    }
+	public String getReason() {
+		return reason;
+	}
 
-    @Override
-    public HandlerList getHandlers() {
-        return IRCKickEvent.handlers;
-    }
+	@Override
+	public HandlerList getHandlers() {
+		return IRCKickEvent.handlers;
+	}
 
-    public static HandlerList getHandlerList() {
-        return IRCKickEvent.handlers;
-    }
+	public static HandlerList getHandlerList() {
+		return IRCKickEvent.handlers;
+	}
 
 }
