@@ -20,7 +20,7 @@ import org.monstercraft.irc.plugin.util.ColorUtils;
 import org.monstercraft.irc.plugin.util.StringUtils;
 import org.monstercraft.irc.plugin.wrappers.IRCChannel;
 
-import com.gmail.nossr50.util.Users;
+import com.gmail.nossr50.util.player.UserManager;
 import com.miraclem4n.mchat.api.Reader;
 import com.miraclem4n.mchat.types.InfoType;
 
@@ -58,7 +58,7 @@ public class MonsterIRCListener implements Listener {
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onChat(final AsyncPlayerChatEvent event) {
 		if (Bukkit.getServer().getPluginManager().getPlugin("mcMMO") != null) {
-			if (!Users.getPlayer(event.getPlayer().getName())
+			if (!UserManager.getPlayer(event.getPlayer().getName())
 					.getAdminChatMode()) {
 				if (event.isCancelled()) {
 					return;
@@ -198,7 +198,7 @@ public class MonsterIRCListener implements Listener {
 		final StringBuffer result = new StringBuffer();
 		if (c.getChatType() == ChatType.MCMMOADMINCHAT) {
 			if (Bukkit.getServer().getPluginManager().getPlugin("mcMMO") != null) {
-				if (Users.getPlayer(player.getName()).getAdminChatMode()) {
+				if (UserManager.getPlayer(player.getName()).getAdminChatMode()) {
 					result.append(Variables.ircformat
 							.replace("{prefix}",
 									StringUtils.getPrefix(player.getName())
@@ -240,10 +240,10 @@ public class MonsterIRCListener implements Listener {
 			}
 		} else if (c.getChatType() == ChatType.GLOBAL) {
 			if (Bukkit.getServer().getPluginManager().getPlugin("mcMMO") != null) {
-				if (Users.getPlayer(player.getName()).getAdminChatMode()) {
+				if (UserManager.getPlayer(player.getName()).getAdminChatMode()) {
 					return;
 				}
-				if (Users.getPlayer(player.getName()).getPartyChatMode()) {
+				if (UserManager.getPlayer(player.getName()).getPartyChatMode()) {
 					return;
 				}
 			}
